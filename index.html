@@ -45,7 +45,7 @@
 
             console.log(data);
 
-            document.querySelector(".temp").innerHTML = data.main.temp + '°F';
+            document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + '°F';
             document.querySelector(".city").innerHTML = data.name;
             document.querySelector(".humidity").innerHTML = data.main.humidity + '%';
             document.querySelector(".wind").innerHTML = data.wind.speed + ' mph';
