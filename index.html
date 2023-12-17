@@ -37,12 +37,21 @@
     </div>
     <script>
         const apiKey = "8739bea7b0556437575079fb2ae61376";
-        const apiUrl = "https://api.openweathermap.org/data/2.5/weather?"
+        const apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=new york"
 
         async function checkWeather(){
             const response = await fetch(apiUrl + `&appid=${apiKey}`);
             var data = await response.json();
+
+            console.log(data);
+
+            document.querySelector(".temp").innerHTML = data.main.temp;
+            document.querySelector(".city").innerHTML = data.name;
+            document.querySelector(".humidity").innerHTML = data.main.humidity;
+
         }
+
+        checkWeather();
     </script>
 </body>
 </html>
